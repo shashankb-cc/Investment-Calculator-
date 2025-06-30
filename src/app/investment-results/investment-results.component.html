@@ -1,4 +1,4 @@
-@if (!annualData) {
+@if (!annualData()) {
 <p class="center">Enter some values to calculate your investment growth and press "Calculate"</p>
 } @else {
 
@@ -14,7 +14,7 @@
     </thead>
     <tbody>
 
-        @for (data of annualData; track data.year) {
+        @for (data of annualData(); track data.year) {
         <tr>
             <td>{{ data.year }}</td>
             <td>{{ data.valueEndOfYear | currency }}</td>
